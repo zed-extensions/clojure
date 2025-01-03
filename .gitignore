@@ -1,0 +1,11 @@
+#
+# zed-clojure
+#
+
+*.wasm
+
+#
+# Rust
+#
+
+/target

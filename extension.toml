@@ -4,7 +4,7 @@ description = "Clojure support."
 version = "0.0.3"
 schema_version = 1
 authors = ["Paulo Roberto de Oliveira Castro <p.oliveira.castro@gmail.com>"]
-repository = "https://github.com/zed-industries/zed"
+repository = "https://github.com/zed-extensions/clojure"
 
 [language_servers.clojure-lsp]
 name = "clojure-lsp"
