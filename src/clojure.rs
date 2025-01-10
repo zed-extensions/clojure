@@ -71,6 +71,8 @@ impl ClojureExtension {
             )
             .map_err(|e| format!("failed to download file: {e}"))?;
 
+            zed::make_file_executable(&binary_path)?;
+
             let entries =
                 fs::read_dir(".").map_err(|e| format!("failed to list working directory {e}"))?;
             for entry in entries {
