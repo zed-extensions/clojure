@@ -10,3 +10,4 @@ brackets = [
     { start = "\"", end = "\"", close = true, newline = false, not_in = ["string"] },
 ]
 word_characters = ["-"]
+tab_size = 2
