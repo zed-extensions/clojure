@@ -11,3 +11,4 @@ brackets = [
 ]
 # See https://clojure.org/reference/reader#_reader_forms
 word_characters = ["*", "+", "!", "-", "_", "'", "?", "<", ">", "="]
+tab_size = 2
