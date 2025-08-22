@@ -2,6 +2,7 @@
 # zed-clojure
 #
 
+grammars/
 *.wasm
 
 #
@@ -9,3 +10,9 @@
 #
 
 /target
+
+#
+# Other
+#
+
+.DS_Store
