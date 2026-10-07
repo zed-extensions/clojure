@@ -11,5 +11,5 @@ name = "clojure-lsp"
 language = "Clojure"
 
 [grammars.clojure]
-repository = "https://github.com/prcastro/tree-sitter-clojure"
-commit = "38b4f8d264248b2fd09575fbce66f7c22e8929d5"
+repository = "https://github.com/sogaiu/tree-sitter-clojure"
+commit = "e43eff80d17cf34852dcd92ca5e6986d23a7040f"

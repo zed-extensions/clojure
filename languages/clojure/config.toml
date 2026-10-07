@@ -1,14 +1,22 @@
 name = "Clojure"
 grammar = "clojure"
-path_suffixes = ["clj", "cljs", "cljc", "cljd", "edn", "bb"]
-line_comments = [";; "]
+path_suffixes = ["clj", "cljs", "cljc", "cljd", "edn", "bb", "nbb", "cljx", "boot"]
+kernel_language_names = ["clojure"]
+line_comments = [";; ", "; "]
 autoclose_before = "}])"
+collapsed_placeholder = "…"
+auto_indent_using_last_non_empty_line = true
 brackets = [
     { start = "{", end = "}", close = true, newline = true },
     { start = "[", end = "]", close = true, newline = true },
     { start = "(", end = ")", close = true, newline = true },
-    { start = "\"", end = "\"", close = true, newline = false, not_in = ["string"] },
+    { start = "\"", end = "\"", close = true, newline = false, not_in = ["string", "comment"] },
 ]
 # See https://clojure.org/reference/reader#_reader_forms
-word_characters = ["*", "+", "!", "-", "_", "'", "?", "<", ">", "="]
+word_characters = ["*", "+", "!", "-", "_", "'", "?", "<", ">", "=", ".", "/", ":"]
 tab_size = 2
+
+# Inside strings and regexes, treat path/namespace separators as
+# completion triggers so requiring and regex editing work.
+[overrides.string]
+completion_query_characters = ["-", "/", ":", "."]
