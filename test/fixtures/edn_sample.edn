@@ -1,0 +1,15 @@
+{:project/name    "fixture"
+ :project/version "0.1.0"
+ :deps            {org.clojure/clojure {:mvn/version "1.12.0"}
+                   org.clojure/tools.deps {:mvn/version "0.24.0"}}
+ :paths           ["src" "resources"]
+ :aliases         {:test {:extra-paths ["test"]
+                          :main-opts   ["-m" "kaocha.runner"]}}}
+
+;; reader discard and tags work in edn too
+#_ :ignored
+#inst "2026-10-06T00:00:00.000-00:00"
+#uuid "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+#{:a :b :c}
+@{:a 1}
+[1 2 3]

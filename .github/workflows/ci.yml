@@ -1,0 +1,34 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check-queries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install tree-sitter-cli
+        run: |
+          version=$(curl -sSL -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/tree-sitter/tree-sitter/releases/latest | jq -r .tag_name)
+          curl -sSL "https://github.com/tree-sitter/tree-sitter/releases/download/${version}/tree-sitter-linux-x64.gz" | gunzip > /usr/local/bin/tree-sitter
+          chmod +x /usr/local/bin/tree-sitter
+          tree-sitter --version
+      - run: script/check-queries.sh
+
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-wasip2
+          components: clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo clippy --target wasm32-wasip2 -- -D warnings
+      - run: cargo test
