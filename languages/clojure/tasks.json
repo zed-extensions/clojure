@@ -1,0 +1,21 @@
+[
+  {
+    "label": "Clojure: Evaluate form",
+    "command": "zed-clojure-eval",
+    "env": {
+      "ZED_CLOJURE_CODE": "$ZED_CUSTOM_form",
+      "ZED_CLOJURE_FILE": "$ZED_FILE",
+      "ZED_CLOJURE_ROW": "$ZED_ROW",
+      "ZED_CLOJURE_COLUMN": "$ZED_COLUMN",
+      "ZED_CLOJURE_SELECTION": "${ZED_SELECTED_TEXT:}",
+      "ZED_CLOJURE_SYMBOL": "${ZED_SYMBOL:}",
+      "ZED_CLOJURE_SNIPPET": "${ZED_CUSTOM_snippet:}"
+    },
+    "tags": ["clojure-eval"],
+    "save": "current",
+    "reveal": "never",
+    "hide": "on_success",
+    "show_summary": false,
+    "show_command": false
+  }
+]
